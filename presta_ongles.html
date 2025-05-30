@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> L'Ins'temps Beauté</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Passions+Conflict&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<section class="haut_page">
+    <header>
+        <nav class="nav">
+            <li><a style="color: inherit" href="index.html">Accueil</a></li>
+            <li><a style="color: inherit" href="avis.html">Avis</a></li>
+            <li><a style="color: inherit" href="tarifs.html">Tarifs</a></li>
+            <li><a style="color: inherit" href="prestas_cils.html">Portfolio cils</a></li>
+            <li><a style="color: inherit" href="presta_ongles.html">Portfolio ongles</a></li>
+            <li><a style="color: inherit" href="contact.html">Contact</a></li>
+        </nav>
+        </nav>
+    </header>
+
+</section>
+
+<h2 class="titre_presta_ongles"> Quelques unes de nos prestations ...</h2>
+
+<div class="grille_ongles">
+    <img src="ongles/ongle1.jpg" alt="photos ongles">
+    <img src="ongles/ongle2.jpg" alt="photos ongles">
+    <img src="ongles/ongle3.jpg" alt="photos ongles">
+    <img src="ongles/ongle4.jpg" alt="photos ongles">
+    <img src="ongles/ongle5.jpg" alt="photos ongles">
+    <img src="ongles/ongle6.jpg" alt="photos ongles">
+    <img src="ongles/ongle7.jpg" alt="photos ongles">
+    <img src="ongles/ongle8.jpg" alt="photos ongles">
+    <img src="ongles/3.jpg" alt="photos ongles 1">
+    <img src="ongles/4.jpg" alt="photos ongles 1">
+    <img src="ongles/5.jpg" alt="photos ongles 1">
+    <img src="ongles/6.jpg" alt="photos ongles 1">
+    <img src="ongles/7.jpg" alt="photos ongles 1">
+    <img src="ongles/9.jpg" alt="photos ongles 1">
+    <img src="ongles/11.jpg" alt="photos ongles 1">
+    <img src="ongles/12.jpg" alt="photos ongles 1">
+    <img src="ongles/14.jpg" alt="photos ongles 1">
+    <img src="ongles/15.jpg" alt="photos ongles 1">
+    <img src="ongles/16.jpg" alt="photos ongles 1">
+    <img src="ongles/17.jpg" alt="photos ongles 1">
+    <img src="ongles/18.jpg" alt="photos ongles 1">
+    <img src="ongles/19.jpg" alt="photos ongles 1">
+    <img src="ongles/20.jpg" alt="photos ongles 1">
+    <img src="ongles/21.jpg" alt="photos ongles 1">
+    <img src="ongles/22.jpg" alt="photos ongles 1">
+    <img src="ongles/23.jpg" alt="photos ongles 1">
+    <img src="ongles/24.jpg" alt="photos ongles 1">
+    <img src="ongles/25.jpg" alt="photos ongles 1">
+    <img src="ongles/26.jpg" alt="photos ongles 1">
+    <img src="ongles/27.jpg" alt="photos ongles 1">
+    <img src="ongles/28.jpg" alt="photos ongles 1">
+    <img src="ongles/29.jpg" alt="photos ongles 1">
+    <img src="ongles/30.jpg" alt="photos ongles 1">
+    <img src="ongles/31.jpg" alt="photos ongles 1">
+    <img src="ongles/32.jpg" alt="photos ongles 1">
+    <img src="ongles/33.jpg" alt="photos ongles 1">
+    <img src="ongles/34.jpg" alt="photos ongles 1">
+    <img src="ongles/35.jpg" alt="photos ongles 1">
+    <img src="ongles/36.jpg" alt="photos ongles 1">
+    <img src="ongles/38.jpg" alt="photos ongles 1">
+    <img src="ongles/39.jpg" alt="photos ongles 1">
+    <img src="ongles/40.jpg" alt="photos ongles 1">
+ <img src="ongles/8.jpg" alt="photos ongles 1">
+ <img src="ongles/10.jpg" alt="photos ongles 1">
+
+</div>
+
+
+
+    <footer>
+        L'Ins'Temps Beauté - By Sabrina DOUGNAC <br>
+        58 rue Combarelles <br>
+        83510 LORGUES
+        <br> <br>
+        Site web crée par Cerberus - SIRET 914415203
+    </footer>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Sélectionne toutes les images dans la grille des ongles
+            const imagesOngles = document.querySelectorAll(".grille_ongles img");
+
+            // Options pour l'Intersection Observer
+            const observerOptions = {
+                root: null, // La racine est le viewport du navigateur
+                rootMargin: "0px", // Pas de marge supplémentaire
+                threshold: 0.1 // Déclenche quand 10% de l'image est visible
+            };
+
+            // Crée une nouvelle instance de l'Intersection Observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Si l'image est visible dans le viewport
+                    if (entry.isIntersecting) {
+                        // Ajoute la classe 'fade-in' pour déclencher l'animation
+                        entry.target.classList.add("fade-in");
+                        // Arrête d'observer cette image une fois qu'elle est apparue
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Pour chaque image d'ongles, commence à l'observer
+            imagesOngles.forEach(img => {
+                observer.observe(img);
+            });
+        });
+    </script>
+</body>

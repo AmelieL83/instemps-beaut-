@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> L'Ins'temps Beauté</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Passions+Conflict&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="haut_page">
+    <header>
+        <nav class="nav">
+            <li><a style="color: inherit" href="index.html">Accueil</a></li>
+            <li><a style="color: inherit" href="avis.html">Avis</a></li>
+            <li><a style="color: inherit" href="tarifs.html">Tarifs</a></li>
+            <li><a style="color: inherit" href="prestas_cils.html">Portfolio cils</a></li>
+            <li><a style="color: inherit" href="presta_ongles.html">Portfolio ongles</a></li>
+            <li><a style="color: inherit" href="contact.html">Contact</a></li>
+        </nav>
+        </nav>
+    </header>
+
+</section>
+
+<h2 class="sous_titres_Lavishly">"Avant-après"      Extensions </h2>
+<div class="grille_cils_avantapres">
+    <img src="cils/avant_apres/extension/10.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/11.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/12.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/14.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/19.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/21.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/22.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/26.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/29.jpg" alt="photos ongles 1">
+</div>
+
+<h2 class="sous_titres_Lavishly">"Avant-après"      Réhaussement </h2>
+<div class="grille_cils_avantapres">
+    <img src="cils/avant_apres/23.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/16.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/17.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/18.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/20.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/27.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/28.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/30.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/24.jpg" alt="photos ongles 1">
+    <img src="cils/avant_apres/extension/25.jpg" alt="photos ongles 1">
+</div>
+   
+
+
+<h2 class="sous_titres_Lavishly"> Des regards sublimés</h2>
+
+<div class="grille_cils">
+    <img src="cils/1.jpg" alt="photos cils">
+    <img src="cils/2.jpg" alt="photos cils">
+    <img src="cils/3.jpg" alt="photos cils">
+    <img src="cils/4.jpg" alt="photos cils">
+    <img src="cils/5.jpg" alt="photos cils">
+    <img src="cils/6.jpg" alt="photos cils">
+    <img src="cils/7.jpg" alt="photos cils">
+    <img src="cils/8.jpg" alt="photos cils">
+    <img src="cils/9.jpg" alt="photos cils">
+    <img src="cils/13.jpg" alt="photos cils">
+    <img src="cils/15.jpg" alt="photos cils">
+
+</div>
+
+    <footer>
+        L'Ins'Temps Beauté - By Sabrina DOUGNAC <br>
+        58 rue Combarelles <br>
+        83510 LORGUES
+        <br> <br>
+        Site web crée par Cerberus - SIRET 914415203
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Sélectionne toutes les images dans la grille des ongles
+            const imagesCils = document.querySelectorAll(".grille_cils_avantapres img");
+
+            // Options pour l'Intersection Observer
+            const observerOptions = {
+                root: null, // La racine est le viewport du navigateur
+                rootMargin: "0px", // Pas de marge supplémentaire
+                threshold: 0.1 // Déclenche quand 10% de l'image est visible
+            };
+
+            // Crée une nouvelle instance de l'Intersection Observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Si l'image est visible dans le viewport
+                    if (entry.isIntersecting) {
+                        // Ajoute la classe 'fade-in' pour déclencher l'animation
+                        entry.target.classList.add("fade-in");
+                        // Arrête d'observer cette image une fois qu'elle est apparue
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Pour chaque image d'ongles, commence à l'observer
+            imagesCils.forEach(img => {
+                observer.observe(img);
+            });
+        });
+    </script>
+
+</body>

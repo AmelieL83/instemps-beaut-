@@ -1,0 +1,334 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+/* barre de navigation */
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: #b69f92;
+    height: 40px;
+}
+
+nav.nav {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+}
+
+nav.nav li {
+    color: white;
+}
+
+/* bandeau accueil */
+
+section.haut_page {
+    background-image: url("Titre.png");
+    height: 80vh;
+    background-size: cover; 
+    background-position: center;
+}
+
+/* bandeau découvrir les prestations */
+
+.logo {
+    width: 10%;
+    padding-top: 150px;
+}
+
+.decouvrir {
+    display: flex;
+    align-items: center;
+}
+
+.decouvrir h2 {
+    font-size: 300%;
+}
+
+/* arches avec prestations */
+
+
+.decouvrir {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%; 
+} 
+
+.titre-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+}
+
+.decouvrir_prestations {
+    font-family:"Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center; 
+}
+
+.prestations {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.arche-container {
+  position: relative;
+  width: 80%;
+}
+
+.actualite {
+    background-color: #f9cfde;
+    border: 1px solid #ccc;
+    padding: 20px; 
+    text-align: center; 
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    max-width: 300px; 
+    flex-shrink: 0; 
+    margin-top: 150px;
+    margin-bottom: 50px; 
+}
+
+.actualite h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.actualite p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}
+#arche {
+  width: 100%;
+  display: block;
+}
+
+.texte-sur-arche {
+  position: absolute;
+  top: 40%;
+  left: 51%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: black;
+  width: 20%;
+}
+
+/* _______________________________________
+avis   */
+
+.avis {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    gap: 10px;
+   
+}
+
+.avis-item {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+
+}
+
+.laisser_avis {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+}
+
+.laisser_avis a {
+    color: black; 
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+
+.flechepicto {
+    width: 5%;
+}
+
+.titre_avis {
+    font-family:"Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    text-align: center; 
+}
+
+.laisser_avis p {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+/* ________________________________________
+tarifs  */
+
+.flyers {
+    display: flex;
+}
+
+.flyerscils {
+    opacity: 30%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.flyersongles {
+    opacity: 30%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.flyerscils:hover {
+    opacity: 100%;
+}
+
+.flyersongles:hover {
+    opacity: 100%;
+}
+
+.flyers img {
+    width: 50%;
+}
+
+
+
+
+/* ___________________________________________ 
+portfolio ongles */
+
+.grille_ongles {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    gap: 15px;
+    padding: 10px;
+}
+
+.grille_ongles img {
+    width: 100%;
+    height: 250px;
+    display: block;
+    margin: 0 auto; 
+    object-fit: cover; 
+    border-radius: 5%;
+
+
+    /* --- AJOUT POUR L'EFFET DE FONDU --- */
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 1s ease-out, transform 1s ease-out; 
+}
+
+/* --- NOUVELLE CLASSE POUR L'EFFET DE FONDU --- */
+.grille_ongles img.fade-in {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.titre_presta_ongles {
+    text-align: center;
+    margin: 15px;
+    font-family:"Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4em;
+}
+
+/* ____________________________________________ */
+
+/* portfolio cils */
+
+.grille_cils_avantapres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+
+.grille_cils_avantapres img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 5%;
+}
+
+
+
+.sous_titres_Lavishly {
+    font-family:"Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4em;
+    text-align: center; 
+}
+
+.grille_cils {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+
+.grille_cils img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    margin-top: 15px;
+    margin-left: 15px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+
+/* ________________________________
+page contact */
+
+.maps {
+    margin: 15px;
+    width: 65%;
+
+}
+
+.contact {
+    position: relative;
+}
+
+.contact p {
+    position: absolute;
+    left: 70%;
+    top: 10%;
+    font-size: 2.5em;
+    font-family: "Lavishly Yours", cursive; ;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pictordv {
+    width: 10%;
+}
+
+ 
+/* pied de page */
+
+footer {
+    background-color: #b69f92;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+}
