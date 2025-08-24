@@ -18,10 +18,17 @@ nav.nav {
     list-style: none;
     width: 100%;
     justify-content: space-around;
+    font-size: x-large;
 }
 
 nav.nav li {
     color: white;
+}
+
+.nav {
+    position: fixed;
+    background-color: #b69f92;
+    z-index: 1000;
 }
 
 /* bandeau accueil */
