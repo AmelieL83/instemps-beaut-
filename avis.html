@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Passions+Conflict&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-marron">
 <section class="haut_page_autre">
     <header>
         <nav class="nav">
@@ -61,5 +61,27 @@
         <br> <br>
         Site web crée par Cerberus - SIRET 914415203
     </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll(".avis-item");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // évite de réanimer à chaque scroll
+        }
+      });
+    }, {
+      threshold: 0.2 // déclenche quand 20% de l’élément est visible
+    });
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
+  });
+
+</script>
+
 
 </body>

@@ -4,6 +4,10 @@
     margin: 0 auto;
 }
 
+.bg-marron {
+    background-color: #b69f92;
+}
+
 /* barre de navigation */
 
 header {
@@ -11,6 +15,7 @@ header {
     align-items: center;
     background-color: #b69f92;
     height: 40px;
+    
 }
 
 nav.nav {
@@ -29,6 +34,7 @@ nav.nav li {
     position: fixed;
     background-color: #b69f92;
     z-index: 1000;
+    
 }
 
 /* bandeau accueil */
@@ -38,7 +44,13 @@ section.haut_page {
     height: 80vh;
     background-size: cover; 
     background-position: center;
+
+    opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+
 }
+
+
 
 /* bandeau découvrir les prestations */
 
@@ -66,6 +78,7 @@ section.haut_page {
     align-items: center;
     height: 10vh;
     width: 100%; 
+
 } 
 
 .titre-container {
@@ -89,7 +102,21 @@ section.haut_page {
     justify-content: center;
     align-items: center;
     gap: 20px;
+
 }
+
+.fade-in-scroll {
+    opacity: 0;
+  transform: translateY(30px); /* petit décalage vers le bas */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}   
+
+.fade-in-scroll.show {
+     opacity: 1;
+  transform: translateY(0);
+}
+
+
 .arche-container {
   position: relative;
   width: 80%;
@@ -181,6 +208,17 @@ avis   */
 .laisser_avis p {
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.avis-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.avis-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 /* ________________________________________
 tarifs  */
@@ -314,15 +352,16 @@ page contact */
 
 .contact {
     position: relative;
+
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
 }
 
 .contact p {
     position: absolute;
-    left: 70%;
-    top: 10%;
-    font-size: 2.5em;
-    font-family: "Lavishly Yours", cursive; ;
-    font-weight: 400;
+    left: 75%;
+    top: 30%;
+    font-size: 2em;
     font-style: normal;
 }
 
@@ -339,3 +378,9 @@ footer {
     margin-top: 25px;
     padding-top: 20px;
 }
+
+
+ @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+ }

@@ -30,7 +30,7 @@
     </div>
 </div>
 
-<div class="prestations">
+<div class="prestations fade-in-scroll">
     <div class="arche-container">
         <img src="arche.png" alt="Arche" id="arche" />
         <div class="texte-sur-arche">
@@ -41,7 +41,7 @@
 
     <div class="actualite">
         <h3> INFO DU MOIS !</h3>
-        <h4> Juin 2025</h4>
+        <h4> Septembre 2025</h4>
         <p> Mise en ligne de notre nouveau site web !</p>
     </div>
 
@@ -66,5 +66,23 @@
     </footer>
 
     
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in-scroll");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target); // On arrête d'observer une fois affiché
+        }
+      });
+    }, { threshold: 0.2 }); // seuil : 20% de l’élément visible
+
+    fadeElements.forEach(el => observer.observe(el));
+  });
+</script>
 </body>
+
+
 </html>
